@@ -3,4 +3,13 @@
     height: 100px;
     text-align: left;
     border: 2px solid red;
+
+}
+
+.children-one{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    text-align:center;
+    background-color: cornflowerblue;
 }

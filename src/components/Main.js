@@ -15,7 +15,7 @@ class AppComponent extends React.Component {
         <div className="notice">
           Please edit <code>src/components/Main.js</code> to get started!
         </div>
-        <div className="one"> 我是一个div 哈 ！！！</div>
+        <div className="one"> 我是一个父级 div 哈 ！！！</div>
         <Home></Home>
       </div>
     );
