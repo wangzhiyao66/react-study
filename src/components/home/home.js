@@ -53,12 +53,13 @@ class HomeComponent extends React.Component {
   // 绑定 回调方法 https://react.docschina.org/docs/handling-events.html
   handleClick(ev) {
     console.log('ev = ', ev);
-    
+
     /**
      * 这里想设置布尔值  取反  注释的这两行代码有报错 ？？？
      */
-    // this.state.isLoggedIn ?  this.setState({isLoggedIn: false}):  this.setState({isLoggedIn: true});
-    // this.setState({isLoggedIn: !this.state.isLoggedIn})
+    // this.state.isLoggedIn ? this.setState({ isLoggedIn: false }) : this.setState({ isLoggedIn: true });
+    this.setState({ isLoggedIn: !this.state.isLoggedIn })
+    console.log(this.state.isLoggedIn);
 
     window.alert("这是输入的数据！");
   }
@@ -82,7 +83,7 @@ class HomeComponent extends React.Component {
         <div className={this.state.class} tabIndex="0">
           我是一个 子级 div 哈 ！！！名字叫做:{" "}
           {this.formatName(this.state.users)}, It is {this.createTime()}
-          <p className="props-content" onClick={this.handleClick}>
+          <p className="props-content" onClick={()=>{this.handleClick()}}>
             props : {this.props.name} + {this.props.propsName} 是 {this.state.isLoggedIn}
           </p>
         </div>
