@@ -6,4 +6,6 @@ This is a warehouse for beginners
 
 2.https://www.jianshu.com/p/27d111a50a06
 
-3. study link:https://react.docschina.org/docs/introducing-jsx.html
+3.study link:https://react.docschina.org/docs/introducing-jsx.html
+
+4.github: https://github.com/superman598/study_notes

@@ -7,6 +7,15 @@ import Home from './home/home'
 let yeomanImage = require("../images/yeoman.png");
 
 class AppComponent extends React.Component {
+
+  // 构造函数 定义数据
+  constructor() {
+    super();
+    this.state = {
+      name: 'project branch name is master !'
+    }
+  }
+
   render() {
     // this.createDom();
     return (
@@ -16,7 +25,8 @@ class AppComponent extends React.Component {
           Please edit <code>src/components/Main.js</code> to get started!
         </div>
         <div className="one"> 我是一个父级 div 哈 ！！！</div>
-        <Home></Home>
+        {/* 父组件传值到子组件  */}
+        <Home name={this.state.name}></Home>
       </div>
     );
   }

@@ -1,15 +1,27 @@
 .home {
     width: 100%;
-    height: 100px;
+    /* height: 100px; */
     text-align: left;
     border: 2px solid red;
 
 }
 
-.children-one{
+.children-one {
     width: 80%;
-    height: 100%;
+    height: 100px;
     margin: 0 auto;
-    text-align:center;
+    text-align: center;
     background-color: cornflowerblue;
+}
+
+.props-content{
+    cursor: pointer;
+    padding: 10px 0;
+    background-color: blueviolet;
+}
+
+.props-content:hover {
+    color:red;
+    font-size:16px;
+    background: pink;
 }
