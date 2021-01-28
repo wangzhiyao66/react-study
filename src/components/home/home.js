@@ -7,7 +7,6 @@ import React from "react";
 
 // study link: https://react.docschina.org/docs/introducing-jsx.html
 class HomeComponent extends React.Component {
-
   // 在构造函数中 初始化 变量
   constructor(props) {
     // 继承
@@ -20,43 +19,47 @@ class HomeComponent extends React.Component {
       },
       class: "children-one", // 属性绑定语法
       date: new Date()
-    }
+    };
   }
-
 
   // 定义 名字拼接 方法
   formatName(user) {
-    return user.firstName + ' + ' + user.lastName;
+    return user.firstName + " + " + user.lastName;
   }
 
   // 创建时钟
   createTime() {
-    return <span> {this.state.date.toLocaleTimeString()} </span>
+    return <span> {this.state.date.toLocaleTimeString()} </span>;
   }
 
   // demo  函数式组件
   Clock(props) {
-    return (
-      <div>
-        函数式组件 {props.date.toLocaleTimeString()}
-      </div>
-    );
+    return <div>函数式组件 {props.date.toLocaleTimeString()}</div>;
   }
   // 更新  this.state 数据
   tick() {
+    // 普通  更新
     this.setState({
       date: new Date()
     });
+
+    // 或者是  函数式
+    // this.setState((state, props) => ({
+    //   counter: state.counter + props.increment
+    // }));
+  }
+
+  // 绑定 回调方法 https://react.docschina.org/docs/handling-events.html
+  handleClick(ev) {
+    console.log('ev = ', ev);
+    window.alert("这是输入的数据！");
   }
 
   // 声明周期  - 挂载
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
+    this.timerID = setInterval(() => this.tick(), 1000);
 
-    console.log('mount props = ', JSON.stringify(this.props));
+    console.log("mount props = ", JSON.stringify(this.props));
   }
   // 声明周期  - 销毁
   componentWillUnmount() {
@@ -69,11 +72,12 @@ class HomeComponent extends React.Component {
       <div className="home">
         {/* 属性绑定语法 */}
         <div className={this.state.class} tabIndex="0">
-          我是一个 子级 div 哈 ！！！名字叫做: {this.formatName(this.state.users)}, It is {this.createTime()}
-          <p>props : {this.props.name} + {this.props.propsName}</p>
-
+          我是一个 子级 div 哈 ！！！名字叫做:{" "}
+          {this.formatName(this.state.users)}, It is {this.createTime()}
+          <p className="props-content" onClick={this.handleClick}>
+            props : {this.props.name} + {this.props.propsName}
+          </p>
         </div>
-
       </div>
     );
   }
@@ -81,6 +85,6 @@ class HomeComponent extends React.Component {
 
 HomeComponent.defaultProps = {
   // 那这里的输入是干啥的 ？？ 默认输入？？
-  propsName: 'project name is test !'
+  propsName: "project name is test !"
 };
 export default HomeComponent;
