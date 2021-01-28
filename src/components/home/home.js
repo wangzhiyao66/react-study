@@ -13,7 +13,7 @@ class HomeComponent extends React.Component {
     super(props);
 
     // 绑定 this , 不然无法使用 this 访问 HomeComponent 类。
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
 
     // 定义静态数据变量
     this.state = {
@@ -87,9 +87,11 @@ class HomeComponent extends React.Component {
         <div className={this.state.class} tabIndex="0">
           我是一个 子级 div 哈 ！！！名字叫做:{" "}
           {this.formatName(this.state.users)}, It is {this.createTime()}
+
           {/* 箭头函数中传入参数，就可以获取事件对象了 */}
-          <p className="props-content" onClick={(e)=>{this.handleClick(e)}}>
-          {/* <p className="props-content" onClick={this.handleClick}> */}
+          {/* <p className="props-content" onClick={(e)=>{this.handleClick(e)}}> */}
+
+          <p className="props-content" onClick={this.handleClick}>
             props : {this.props.name} + {this.props.propsName} 是 {this.state.isLoggedIn ? "true" : "false"}
           </p>
         </div>

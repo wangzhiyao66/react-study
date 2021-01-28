@@ -2,7 +2,8 @@ require("normalize.css/normalize.css");
 require("styles/App.css");
 
 import React from "react";
-import Home from './home/home'
+import Home from './home/home';
+import Arrlist from "./arrlist/arrlist";
 
 let yeomanImage = require("../images/yeoman.png");
 
@@ -25,8 +26,12 @@ class AppComponent extends React.Component {
           Please edit <code>src/components/Main.js</code> to get started!
         </div>
         <div className="one"> 我是一个父级 div 哈 ！！！</div>
+
         {/* 父组件传值到子组件  */}
-        <Home name={this.state.name}></Home>
+        {/* <Home name={this.state.name}></Home> */}
+
+        {/* 列表循环 */}
+        <Arrlist></Arrlist>
       </div>
     );
   }
