@@ -3,7 +3,8 @@ require("styles/App.css");
 
 import React from "react";
 // import Home from './home/home';
-import Arrlist from "./arrlist/arrlist";
+// import Arrlist from "./arrlist/arrlist";
+import Dialog from "./dialog/dialog";
 
 let yeomanImage = require("../images/yeoman.png");
 
@@ -32,6 +33,9 @@ class AppComponent extends React.Component {
 
         {/* 列表循环 */}
         <Arrlist></Arrlist>
+
+        {/* 弹窗组件 */}
+        {/* <Dialog></Dialog> */}
       </div>
     );
   }
