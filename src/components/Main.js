@@ -3,8 +3,8 @@ require("styles/App.css");
 
 import React from "react";
 // import Home from './home/home';
-// import Arrlist from "./arrlist/arrlist";
-import Dialog from "./dialog/dialog";
+import Arrlist from "./arrlist/arrlist";
+// import Dialog from "./dialog/dialog";
 
 let yeomanImage = require("../images/yeoman.png");
 
