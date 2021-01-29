@@ -2,7 +2,7 @@ require("normalize.css/normalize.css");
 require("styles/App.css");
 
 import React from "react";
-import Home from './home/home';
+// import Home from './home/home';
 import Arrlist from "./arrlist/arrlist";
 
 let yeomanImage = require("../images/yeoman.png");
