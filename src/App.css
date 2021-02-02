@@ -1,5 +1,23 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  width: 100%;
+  height: 100%;
+  /* height: 500px; */
+
+}
+
+.sidebar {
+  float: left;
+  width: 160px;
+  height: 100%;
+  background-color: #fff;
+}
+
+.content {
+  /* float: left; */
+  width: calc(100% -160);
+  height: 100%;
+  background-color: #eee;
 }
 
 .App-logo {
