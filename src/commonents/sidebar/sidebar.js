@@ -11,6 +11,7 @@ export default class SidebarComponent extends React.Component {
     this.state = {
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     };
+    this.changeMenu = this.changeMenu.bind(this);
   }
 
   // 声明周期  - 挂载
@@ -29,6 +30,7 @@ export default class SidebarComponent extends React.Component {
       </div>
     );
   }
+
   // logo
   logo() {
     return (
@@ -39,11 +41,15 @@ export default class SidebarComponent extends React.Component {
     );
   }
 
+  changeMenu(param){
+    console.log('param', param);
+  }
+
   // 列表
   menuList() {
     const numbers = this.state.list;
-    const listItems = numbers.map((number) => (
-      <li key={number.toString()}> 菜单 {number} </li>
+    const listItems = numbers.map((number,index) => (
+      <li key={number.toString()} onClick={this.changeMenu(number)}> 菜单 {number} </li>
     ));
     return <ul className="menulist">{listItems}</ul>;
   }
