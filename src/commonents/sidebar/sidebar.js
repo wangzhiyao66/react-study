@@ -6,12 +6,12 @@ import React from "react";
 export default class SidebarComponent extends React.Component {
   state = {};
   // 构造器 函数
-  constructor(props) {
+  constructor() {
     super();
+    // this.changeMenu = this.changeMenu.bind(this);
     this.state = {
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     };
-    this.changeMenu = this.changeMenu.bind(this);
   }
 
   // 声明周期  - 挂载
@@ -36,7 +36,7 @@ export default class SidebarComponent extends React.Component {
     return (
       <div className="logo-box">
         <img src={logo} className="App-logo" alt="logo" />
-        <p className="side-title">React demo</p>
+        <p className="side-title" onClick={this.changeMenu('111')}>React demo</p>
       </div>
     );
   }
@@ -49,7 +49,7 @@ export default class SidebarComponent extends React.Component {
   menuList() {
     const numbers = this.state.list;
     const listItems = numbers.map((number,index) => (
-      <li key={number.toString()} onClick={this.changeMenu(number)}> 菜单 {number} </li>
+      <li key={number.toString()} onClick={() => this.changeMenu(number)}> 菜单 {number} </li>
     ));
     return <ul className="menulist">{listItems}</ul>;
   }
