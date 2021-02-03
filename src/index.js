@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// 注入服务类
+// eslint-disable-next-line no-unused-vars
+import Server from './server/index';
 
 ReactDOM.render(
   <React.StrictMode>
