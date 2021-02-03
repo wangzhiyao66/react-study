@@ -1,8 +1,8 @@
-import "./about.css";
+import "./demo.css";
 
 import React from "react";
 
-export default class AboutComponent extends React.Component {
+export default class DemoComponent extends React.Component {
   state = {};
   // 构造器 函数
   constructor(props) {
@@ -12,18 +12,17 @@ export default class AboutComponent extends React.Component {
 
   // 声明周期  - 挂载
   componentDidMount() {
-    console.log("About props", this.props);
+    console.log("Demo props", this.props);
   }
   // 声明周期  - 销毁
   componentWillUnmount() {}
 
   // 渲染函数
   render() {
-    return <div className="Demo">About</div>;
+    return <div className="Demo">Demo</div>;
   }
 }
-
-AboutComponent.defaultProps = {
+DemoComponent.defaultProps = {
   // props
-  name: "About",
+  name: "Demo",
 };
