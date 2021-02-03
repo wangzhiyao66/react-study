@@ -11,6 +11,7 @@ export default class SidebarComponent extends React.Component {
     // this.changeMenu = this.changeMenu.bind(this);
     this.state = {
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      target: 1,
     };
   }
 
@@ -36,13 +37,15 @@ export default class SidebarComponent extends React.Component {
     return (
       <div className="logo-box">
         <img src={logo} className="App-logo" alt="logo" />
-        <p className="side-title" onClick={this.changeMenu('111')}>React demo</p>
+        {/* <p className="side-title" onClick={this.changeMenu('111')}>React demo</p> */}
+        <p className="side-title">React demo</p>
       </div>
     );
   }
 
   changeMenu(param){
-    console.log('param', param);
+    this.setState({target : param});
+    console.log('param', param, this.state.target);
   }
 
   // 列表
