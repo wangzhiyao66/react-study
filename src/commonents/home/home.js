@@ -1,9 +1,9 @@
 import "./home.css";
 
-import React from "react";
+// Fragment  占位符  也来 React;
+import React, { Component, Fragment } from "react";
 
-
-export default class HomeComponent extends React.Component {
+export default class HomeComponent extends Component {
   state = {};
   // 构造器 函数
   constructor(props) {
@@ -20,7 +20,11 @@ export default class HomeComponent extends React.Component {
 
   // 渲染函数
   render() {
-    return <div className="home-box">Home</div>;
+    return (
+      <Fragment> 
+        <div className="home-box">Home</div>
+      </Fragment>
+    );
   }
 }
 HomeComponent.defaultProps = {
