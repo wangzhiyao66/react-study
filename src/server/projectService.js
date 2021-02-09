@@ -1,9 +1,9 @@
 import { Subject } from "rxjs";
 
 class ProjectService {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   // 菜单数据
   menuData = {};
