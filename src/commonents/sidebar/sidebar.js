@@ -43,9 +43,11 @@ export default class SidebarComponent extends React.Component {
     );
   }
 
+  // 调用父组件方法存贮
   changeMenu(param) {
     this.setState({ target: param });
-    console.log("param", param, this.state.target);
+    // console.log("param", param, this.state.target);
+    this.props.itemActive(param);
   }
 
   // 列表
