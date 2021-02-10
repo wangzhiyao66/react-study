@@ -43,16 +43,23 @@ export default class SidebarComponent extends React.Component {
     );
   }
 
-  changeMenu(param){
-    this.setState({target : param});
-    console.log('param', param, this.state.target);
+  changeMenu(param) {
+    this.setState({ target: param });
+    console.log("param", param, this.state.target);
   }
 
   // 列表
   menuList() {
     const numbers = this.state.list;
-    const listItems = numbers.map((number,index) => (
-      <li key={number.toString()} onClick={() => this.changeMenu(number)}> 菜单 {number} </li>
+    const listItems = numbers.map((number, index) => (
+      <li
+        key={number.toString()}
+        onClick={() => this.changeMenu(number)}
+        dangerouslySetInnerHTML={{ __html: number }}
+      >
+        {" "}
+        菜单 {number}{" "}
+      </li>
     ));
     return <ul className="menulist">{listItems}</ul>;
   }
