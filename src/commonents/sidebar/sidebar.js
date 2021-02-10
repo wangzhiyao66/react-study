@@ -55,10 +55,9 @@ export default class SidebarComponent extends React.Component {
       <li
         key={number.toString()}
         onClick={() => this.changeMenu(number)}
-        dangerouslySetInnerHTML={{ __html: number }}
+        // dangerouslySetInnerHTML={{ __html: number }}
       >
-        {" "}
-        菜单 {number}{" "}
+        菜单 {number}
       </li>
     ));
     return <ul className="menulist">{listItems}</ul>;

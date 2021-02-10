@@ -22,7 +22,10 @@ export default class HomeComponent extends Component {
   render() {
     return (
       <Fragment> 
-        <div className="home-box">Home</div>
+        <div className="home-box">
+          <label htmlFor="inset">请输入：</label>
+          <input id='inset' type="text"></input>
+        </div>
       </Fragment>
     );
   }
