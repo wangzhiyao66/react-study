@@ -1,7 +1,7 @@
 import "./demo.css";
 
 import React from "react";
-
+import PropTypes from "prop-types";
 export default class DemoComponent extends React.Component {
   state = {};
   // 构造器 函数
@@ -15,13 +15,19 @@ export default class DemoComponent extends React.Component {
     console.log("Demo props", this.props);
   }
   // 声明周期  - 销毁
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   // 渲染函数
   render() {
     return <div className="Demo">Demo</div>;
   }
 }
+
+// 定义数据 输入类型，直接使用 Typescript 不好吗？
+DemoComponent.propTypes = {
+  name: PropTypes.string,
+}
+
 DemoComponent.defaultProps = {
   // props
   name: "Demo",
