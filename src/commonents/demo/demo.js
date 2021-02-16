@@ -2,6 +2,9 @@ import "./demo.css";
 
 import React from "react";
 import PropTypes from "prop-types";
+// redux Link: https://github.com/reduxjs/redux  
+// react-redux  
+// 1. privader 组件使用。
 export default class DemoComponent extends React.Component {
   state = {};
   // 构造器 函数
@@ -23,7 +26,7 @@ export default class DemoComponent extends React.Component {
   }
 }
 
-// 定义数据 输入类型，直接使用 Typescript 不好吗？
+// 定义数据 输入类型，直接使用 Typescript 不好吗？ 同 LINK:https://react.docschina.org/docs/typechecking-with-proptypes.html
 DemoComponent.propTypes = {
   name: PropTypes.string,
 }
