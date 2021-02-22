@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-// 注入服务类
-// eslint-disable-next-line no-unused-vars
-import Server from './server/index';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Router, Route } from "react-router";
+import { createBrowserHistory } from "history";
+const history = createBrowserHistory();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  // router:  https://reactrouter.com/web/api/Router
+  <Router history={history}>
+    {/* <React.StrictMode> */}
+      <Route path="/" component={App}></Route>
+    {/* </React.StrictMode> */}
+  </Router>,
+
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
+
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
