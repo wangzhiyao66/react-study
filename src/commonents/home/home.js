@@ -2,8 +2,25 @@ import "./home.css";
 
 // Fragment  占位符  也来 React;
 import React, { Component, Fragment } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch,
+} from "react-router-dom";
+function Index() {
+  let { id } = useParams();
+
+  return (
+    <div>
+      <h2>index ID: {id}</h2>
+    </div>
+  );
+  // return <h2>index ID: {id}</h2>;
+}
 function Home() {
   return <h2>Home</h2>;
 }
@@ -13,7 +30,48 @@ function About() {
 }
 
 function Topics() {
-  return <h2>topics</h2>;
+  // return <h2>topics</h2>;
+  let { path, url } = useRouteMatch();
+  
+  return (
+    <div>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <Link to={`${url}/rendering`}>Rendering with React</Link>
+        </li>
+        <li>
+          <Link to={`${url}/components`}>Components</Link>
+        </li>
+        <li>
+          <Link to={`${url}/props-v-state`}>Props v. State</Link>
+        </li>
+      </ul>
+
+      <Switch>
+        <Route exact path={path}>
+          <h3>Please select a topic.</h3>
+        </Route>
+        <Route path={`${path}/:topicId`}>
+          <Topic />
+        </Route>
+      </Switch>
+    </div>
+  );
+}
+
+function Topic() {
+  // The <Route> that rendered this component has a
+  // path of `/topics/:topicId`. The `:topicId` portion
+  // of the URL indicates a placeholder that we can
+  // get from `useParams()`.
+  let { topicId } = useParams();
+
+  return (
+    <div>
+      <h3>{topicId}</h3>
+    </div>
+  );
 }
 
 export default class HomeComponent extends Component {
@@ -43,6 +101,9 @@ export default class HomeComponent extends Component {
           <div>
             <ul>
               <li>
+                <Link to="/">index</Link>
+              </li>
+              <li>
                 <Link to="/home">Home</Link>
               </li>
               <li>
@@ -54,15 +115,22 @@ export default class HomeComponent extends Component {
             </ul>
 
             <Switch>
+              {/* 1 基本使用 */}
+              <Route exact path="/">
+                <Index />
+              </Route>
               <Route path="/about">
                 <About />
               </Route>
+              {/* 带嵌套路由的 */}
               <Route path="/topics">
                 <Topics />
               </Route>
               <Route path="/home">
                 <Home />
               </Route>
+              {/* 2 带参数的 */}
+              {/* <Route path="/:id" children={<Index />} /> */}
             </Switch>
           </div>
         </Router>
