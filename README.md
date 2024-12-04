@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+<<<<<<< HEAD
 In the project directory, you can run:
 
 ### `npm start`
@@ -68,3 +69,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+3.study link:https://react.docschina.org/docs/introducing-jsx.html
+
+4.github: https://github.com/superman598/study_notes
+
+5.React Router: http://www.ruanyifeng.com/blog/2016/05/react_router.html
+>>>>>>> ea654baecd272f7e483e3660b9fef976a0983e8a

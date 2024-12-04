@@ -1,0 +1,25 @@
+
+.arrlist {
+    /* height: 100px; */
+    text-align:center;
+    background-color: rgb(107, 77, 40);
+}
+
+.list-ul {
+    list-style: none;
+    background-color:#fff;
+    border: 1px solid blue;
+    border-radius: 6px;
+}
+
+.list-ul li {
+    height: 20px;
+    margin: 3px 0;
+    color: brown;
+    cursor: pointer;
+    background-color:#ddd;
+}
+
+.list-ul li:hover {
+    background-color:yellowgreen;
+}
