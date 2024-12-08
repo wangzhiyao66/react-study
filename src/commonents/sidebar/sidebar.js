@@ -11,7 +11,7 @@ export default class SidebarComponent extends React.Component {
     // this.changeMenu = this.changeMenu.bind(this);
     this.state = {
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      target: 1,
+      target: 1
     };
   }
 
@@ -20,12 +20,12 @@ export default class SidebarComponent extends React.Component {
     console.log("sidebar props", this.props);
   }
   // 声明周期  - 销毁
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   // 渲染函数
   render() {
     return (
-      <div className="sidebar">
+      <div class="sidebar">
         {this.logo()}
         {this.menuList()}
       </div>
@@ -35,10 +35,10 @@ export default class SidebarComponent extends React.Component {
   // logo
   logo() {
     return (
-      <div className="logo-box">
-        <img src={logo} className="App-logo" alt="logo" />
-        {/* <p className="side-title" onClick={this.changeMenu('111')}>React demo</p> */}
-        <p className="side-title">React demo</p>
+      <div class="logo-box">
+        <img src={logo} class="App-logo" alt="logo" />
+        {/* <p class="side-title" onClick={this.changeMenu('111')}>React demo</p> */}
+        <p class="side-title">React demo</p>
       </div>
     );
   }
@@ -46,7 +46,7 @@ export default class SidebarComponent extends React.Component {
   // 调用父组件方法存贮
   changeMenu(param) {
     this.setState({ target: param });
-    // console.log("param", param, this.state.target);
+    console.log("param", param, this.state.target);
     this.props.itemActive(param);
   }
 
@@ -56,17 +56,20 @@ export default class SidebarComponent extends React.Component {
     const listItems = numbers.map((number, index) => (
       <li
         key={number.toString()}
+        title={index}
         onClick={() => this.changeMenu(number)}
-        // dangerouslySetInnerHTML={{ __html: number }}
+      // dangerouslySetInnerHTML={{ __html: number }}
       >
         菜单 {number}
       </li>
     ));
-    return <ul className="menulist">{listItems}</ul>;
+    console.log('listItems', listItems);
+
+    return <ul class="menulist">{listItems}</ul>;
   }
 }
 
 SidebarComponent.defaultProps = {
   // props
-  name: "Sidebar",
+  name: "Sidebar"
 };

@@ -21,12 +21,12 @@ class AppComponent extends React.Component {
   render() {
     // this.createDom();
     return (
-      <div className="index">
+      <div class="index">
         <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">
+        <div class="notice">
           Please edit <code>src/components/Main.js</code> to get started!
         </div>
-        <div className="one"> 我是一个父级 div 哈 ！！！</div>
+        <div class="one"> 我是一个父级 div 哈 ！！！</div>
 
         {/* 父组件传值到子组件  */}
         {/* <Home name={this.state.name}></Home> */}
@@ -43,7 +43,7 @@ class AppComponent extends React.Component {
   createDom() {
     return React.createElement(
       "div",
-      { className: "shopping-list" },
+      { class: "shopping-list" },
       React.createElement("h1" /* ... h1 children ... */),
       React.createElement("ul" /* ... ul children ... */)
     );

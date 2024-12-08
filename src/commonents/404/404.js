@@ -1,4 +1,4 @@
-import "./demo.css";
+import "./404.css";
 
 import React from "react";
 // import PropTypes from "prop-types";
@@ -22,8 +22,8 @@ export default class NoFoundComponent extends React.Component {
 
   // 渲染函数
   render() {
-    return <div className="Demo">
-        <h1>页面未找到！！！</h1>
+    return <div class="Demo">
+      <h1>页面未找到！！！</h1>
     </div>;
   }
 }

@@ -9,8 +9,10 @@ import {
   Route,
   Link,
   useParams,
-  useRouteMatch,
+  useRouteMatch
 } from "react-router-dom";
+
+// index 页面 模拟
 function Index() {
   let { id } = useParams();
 
@@ -21,10 +23,12 @@ function Index() {
   );
   // return <h2>index ID: {id}</h2>;
 }
+// Home 页面 模拟
 function Home() {
   return <h2>Home</h2>;
 }
 
+// About 页面 模拟
 function About() {
   return <h2>About</h2>;
 }
@@ -32,7 +36,7 @@ function About() {
 function Topics() {
   // return <h2>topics</h2>;
   let { path, url } = useRouteMatch();
-  
+
   return (
     <div>
       <h2>Topics</h2>
@@ -76,8 +80,9 @@ function Topic() {
 
 export default class HomeComponent extends Component {
   state = {};
+  data = '';
   // 构造器 函数
-  constructor(props) {
+  constructor() {
     super();
     this.state = {};
   }
@@ -87,13 +92,13 @@ export default class HomeComponent extends Component {
     console.log("Home props", this.props);
   }
   // 声明周期  - 销毁
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   // 渲染函数
   render() {
     return (
       <Fragment>
-        {/* <div className="home-box">
+        {/* <div class="home-box">
           <label htmlFor="inset">请输入：</label>
           <input id='inset' type="text"></input>
         </div> */}
@@ -140,5 +145,5 @@ export default class HomeComponent extends Component {
 }
 HomeComponent.defaultProps = {
   // props
-  name: "Home",
+  name: "Home"
 };

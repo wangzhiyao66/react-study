@@ -1,0 +1,12 @@
+.ItemDemo {
+    margin: 10px 20px;
+    border: 1px solid red;
+}
+
+.done {
+    color: blue;
+    font-size: 12px;
+    cursor: pointer;
+    float: right;
+    margin-right: 100px;
+}

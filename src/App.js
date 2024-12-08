@@ -3,6 +3,8 @@ import "./App.css";
 
 import Sidebar from "./commonents/sidebar/sidebar";
 import Home from "./commonents/home/home";
+// import Home from './components/home/home'
+import List from './list/list'
 import React, { Component } from "react";
 class App extends Component {
   // 构造器
@@ -10,19 +12,20 @@ class App extends Component {
     super();
     this.state = {
       active: "", // 激活项
-      menuData: [], // 菜单数据存贮
+      menuData: [] // 菜单数据存贮
     };
   }
 
   // 主题页面
   render() {
     return (
-      <div className="App">
-        <div className="sidebar-box">
-          <Sidebar itemActive= {this.itemActive.bind(this)}></Sidebar>
+      <div class="App">
+        <div class="sidebar-box">
+          <Sidebar itemActive={this.itemActive.bind(this)}></Sidebar>
         </div>
-        <div className="content">
+        <div class="content">
           <Home></Home>
+          <List></List>
         </div>
       </div>
     );
@@ -31,18 +34,18 @@ class App extends Component {
   itemActive(param) {
     console.log('param', param);
     this.setState({
-      active: param,
+      active: param
     });
   }
 }
 
 // function App() {
 //   return (
-//     <div className="App">
-//       <div className="sidebar-box">
+//     <div class="App">
+//       <div class="sidebar-box">
 //         <Sidebar></Sidebar>
 //       </div>
-//       <div className="content">
+//       <div class="content">
 //         <Home></Home>
 //       </div>
 //     </div>

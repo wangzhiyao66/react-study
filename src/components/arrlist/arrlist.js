@@ -27,7 +27,7 @@ class arrlistComponent extends React.Component {
     const listItems = numbers.map((number) => (
       <li key={number.toString()}> 我是第 {number} 个 li 元素</li>
     ));
-    return <ul className="list-ul">{listItems}</ul>;
+    return <ul class="list-ul">{listItems}</ul>;
   }
 
   handleChange(event) {
@@ -40,7 +40,7 @@ class arrlistComponent extends React.Component {
 
   handleSubmit(event) {
     // alert("提交的名字: " + this.state.value);
-    console.log( "提交的名字: " + this.state.value, this.state.article);
+    console.log("提交的名字: " + this.state.value, this.state.article);
     event.preventDefault();
   }
 
@@ -70,13 +70,13 @@ class arrlistComponent extends React.Component {
   }
 
   // 声明周期  - 挂载
-  componentDidMount() {}
+  componentDidMount() { }
   // 声明周期  - 销毁
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   render() {
     return (
-      <div className="arrlist">
+      <div class="arrlist">
         arrlist
         {this.numberList()}
         {this.formlist()}

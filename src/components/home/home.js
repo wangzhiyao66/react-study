@@ -56,13 +56,13 @@ class HomeComponent extends React.Component {
 
   // 绑定 回调方法 https://react.docschina.org/docs/handling-events.html
   handleClick(ev) {
-    console.log('ev = ',this.state.isLoggedIn, ev);
-    
+    console.log('ev = ', this.state.isLoggedIn, ev);
+
     /**
      * 这里想设置布尔值  取反  是异步的.
      */
     // this.state.isLoggedIn ?  this.setState({isLoggedIn: false}):  this.setState({isLoggedIn: true});
-    this.setState({isLoggedIn: !this.state.isLoggedIn})
+    this.setState({ isLoggedIn: !this.state.isLoggedIn })
 
     // 这里的  setState  是异步的，调用下面方法可以 验证
     // window.alert("这是输入的数据！" + this.state.isLoggedIn);
@@ -82,16 +82,16 @@ class HomeComponent extends React.Component {
   // 渲染函数 调用 渲染页面内容
   render() {
     return (
-      <div className="home">
+      <div class="home">
         {/* 属性绑定语法 */}
-        <div className={this.state.class} tabIndex="0">
+        <div class={this.state.class} tabIndex="0">
           我是一个 子级 div 哈 ！！！名字叫做:{" "}
           {this.formatName(this.state.users)}, It is {this.createTime()}
 
           {/* 箭头函数中传入参数，就可以获取事件对象了 */}
-          {/* <p className="props-content" onClick={(e)=>{this.handleClick(e)}}> */}
+          {/* <p class="props-content" onClick={(e)=>{this.handleClick(e)}}> */}
 
-          <p className="props-content" onClick={this.handleClick}>
+          <p class="props-content" onClick={this.handleClick}>
             props : {this.props.name} + {this.props.propsName} 是 {this.state.isLoggedIn ? "true" : "false"}
           </p>
         </div>

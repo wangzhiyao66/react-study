@@ -15,11 +15,11 @@ export default class AboutComponent extends React.Component {
     console.log("About props", this.props);
   }
   // 声明周期  - 销毁
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   // 渲染函数
   render() {
-    return <div className="Demo">About</div>;
+    return <div class="Demo">About</div>;
   }
 }
 
