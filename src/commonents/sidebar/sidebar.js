@@ -63,7 +63,7 @@ export default class SidebarComponent extends React.Component {
         菜单 {number}
       </li>
     ));
-    console.log('listItems', listItems);
+    // console.log('listItems', listItems);
 
     return <ul class="menulist">{listItems}</ul>;
   }

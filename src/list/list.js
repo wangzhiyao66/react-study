@@ -14,13 +14,12 @@ import Footer from './footer/footer'
 export default class ListComponent extends React.Component {
 
     // 初始化状态
-    state = {
-
-    };
+    state = {};
     // 构造器 函数
-    constructor(props) {
+    constructor() {
         super();
         this.state = {
+            selectFlag: false,
             todos: [
                 { id: 1, trackName: '吃饭', done: false },
                 { id: 2, trackName: '睡觉', done: true },
@@ -53,13 +52,35 @@ export default class ListComponent extends React.Component {
     // 更新数据
     updataTodo(id, flag) {
         let list = this.state.todos
+        if (list.length == 0) {
+            return;
+        }
+        let flagList = [];
         list.forEach(el => {
-            el.id == id && (el.done = flag)
+            if (el.id == id) {
+                el.done = flag
+                flagList.push(flag)
+            } else {
+                flagList.push(el.done)
+            }
         });
-        this.setState({
-            todos: list
-        })
+        flagList = Array.from(new Set(flagList))
+        // console.log(flagList);
+        if (flagList.length == 1 && flagList[0] == true) {
+            this.setState({
+                selectFlag: true,
+                todos: list
+            })
+        } else[
+            this.setState({
+                selectFlag: false,
+                todos: list
+            })
+        ]
+
     }
+
+
     // 全选或者是全不选
     selectAll(flag) {
         let list = this.state.todos
@@ -67,9 +88,11 @@ export default class ListComponent extends React.Component {
             el.done = flag
         });
         this.setState({
-            todos: list
+            todos: list,
+            selectFlag: flag
         })
     }
+    // 删除已完成todo
     delect() {
         let list = this.state.todos;
         console.log('delect', list);
@@ -78,7 +101,8 @@ export default class ListComponent extends React.Component {
             return el.done != true;
         })
         this.setState({
-            todos: newlist
+            todos: newlist,
+            selectFlag: false
         })
     }
     // 渲染函数
@@ -87,17 +111,16 @@ export default class ListComponent extends React.Component {
         return <div class="ListDemo">
             <Header addTodo={this.addTodo.bind(this)}></Header>
             <Item todo={todo} updataTodo={this.updataTodo.bind(this)}></Item>
-            <Footer selectAll={this.selectAll.bind(this)} delect={this.delect.bind(this)}></Footer>
+            <Footer selectFlag={this.state.selectFlag} selectAll={this.selectAll.bind(this)} delect={this.delect.bind(this)}></Footer>
         </div>;
     }
 }
 
 // 定义数据 输入类型，直接使用 Typescript 不好吗？ 同 LINK:https://react.d\ocschina.org/docs/typechecking-with-proptypes.html
 ListComponent.propTypes = {
-    name: PropTypes.string,
+    name: PropTypes.string
 }
 
 ListComponent.defaultProps = {
-    // props
     name: "list"
 };

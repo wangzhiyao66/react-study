@@ -8,13 +8,17 @@ import PropTypes from "prop-types";
 export default class FooterComponent extends React.Component {
     state = {};
     // 构造器 函数
-    constructor(props) {
+    constructor() {
         super();
         this.state = {};
     }
 
     // 声明周期  - 挂载
     componentDidMount() {
+        // console.log("Demo props", this.props);
+    }
+    // 更新
+    componentDidUpdate() {
         // console.log("Demo props", this.props);
     }
 
@@ -35,7 +39,7 @@ export default class FooterComponent extends React.Component {
     render() {
         return <div class="FooterDemo">
             <div>
-                <input type="checkbox" onChange={(e) => this.inputChanges(e)}></input>
+                <input type="checkbox" checked={this.props.selectFlag} onChange={(e) => this.inputChanges(e)}></input>
                 <span>已选2条/共5条</span>
                 <button class='det-btn' onClick={() => this.delect()}>删除</button>
             </div>
@@ -45,11 +49,13 @@ export default class FooterComponent extends React.Component {
 }
 
 // 定义数据 输入类型，直接使用 Typescript 不好吗？ 同 LINK:https://react.d\ocschina.org/docs/typechecking-with-proptypes.html
-// FooterComponent.propTypes = {
-//     name: PropTypes.string
-// }
+FooterComponent.propTypes = {
+    // name: PropTypes.string,
+    selectFlag: PropTypes.bool
+}
 
-// FooterComponent.defaultProps = {
-//     // props
-//     name: "Footer"
-// };
+FooterComponent.defaultProps = {
+    // props
+    // name: 'FooterComponent',
+    selectFlag: false
+};
